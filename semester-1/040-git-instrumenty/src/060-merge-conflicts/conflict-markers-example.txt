@@ -1,0 +1,40 @@
+Точний вигляд Calculator.java ПІД ЧАС конфлікту (перевірено реальним git merge),
+одразу після спроби `git merge feature/ostacha`, стоячи на main, куди вже
+змержено feature/stepin:
+
+--- ФРАГМЕНТ ФАЙЛУ З МАРКЕРАМИ КОНФЛІКТУ ---
+            case "/":
+                return a / b;
+<<<<<<< HEAD
+            case "^":
+                return Math.pow(a, b);
+=======
+            case "%":
+                return a % b;
+>>>>>>> feature/ostacha
+            default:
+                System.out.println("Невідома операція");
+                return 0;
+--- КІНЕЦЬ ФРАГМЕНТА ---
+
+Пояснення маркерів:
+- `<<<<<<< HEAD` ... `=======` - вміст поточної гілки (main, куди вже змержено feature/stepin)
+- `=======` ... `>>>>>>> feature/ostacha` - вміст гілки, яку намагаємось змержити
+
+Вирішення (обрали ЗАЛИШИТИ ОБИДВІ операції, а не одну):
+```
+            case "/":
+                return a / b;
+            case "^":
+                return Math.pow(a, b);
+            case "%":
+                return a % b;
+            default:
+                System.out.println("Невідома операція");
+                return 0;
+```
+Після ручного редагування файлу до такого вигляду: `git add Calculator.java`,
+потім `git commit` (Git сам запропонує повідомлення на кшталт "Merge branch
+'feature/ostacha'" - можна залишити його або написати своє).
+
+Повний вирішений файл - `Calculator-resolved.java` у цій же папці.
