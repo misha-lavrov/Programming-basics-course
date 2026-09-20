@@ -1,0 +1,45 @@
+Реальний, перевірений приклад відповіді публічного REST API (запит
+GET https://jsonplaceholder.typicode.com/users/1):
+
+{
+  "id": 1,
+  "name": "Leanne Graham",
+  "username": "Bret",
+  "email": "Sincere@april.biz",
+  "address": {
+    "street": "Kulas Light",
+    "suite": "Apt. 556",
+    "city": "Gwenborough",
+    "zipcode": "92998-3874",
+    "geo": {
+      "lat": "-37.3159",
+      "lng": "81.1496"
+    }
+  },
+  "phone": "1-770-736-8031 x56442",
+  "website": "hildegard.org",
+  "company": {
+    "name": "Romaguera-Crona",
+    "catchPhrase": "Multi-layered client-server neural-net",
+    "bs": "harness real-time e-markets"
+  }
+}
+
+Пояснення структури JSON (JavaScript Object Notation) для заняття:
+- { } - об'єкт: набір пар "ключ": значення, розділених комами.
+- "ключ": значення - ключ завжди в лапках (рядок).
+- Значення може бути: рядком ("Leanne Graham"), числом (1), об'єктом
+  (address - об'єкт УСЕРЕДИНІ об'єкта, можна вкладати як завгодно глибоко),
+  або масивом [ ] (у цьому прикладі масивів немає, але вони теж часто
+  трапляються - наприклад, список замовлень користувача).
+- Дуже схоже на те, як в Java виглядав би об'єкт класу User з полями
+  name, email, address (сам address - об'єкт класу Address) - JSON,
+  по суті, і є текстовим представленням структури даних, дуже близьким
+  до того, як ми описували класи в блоці 2.
+
+Практика на занятті:
+1. Відкрити https://jsonplaceholder.typicode.com/users у браузері -
+   побачити масив [ ] з 10 такими об'єктами.
+2. Спробувати https://jsonplaceholder.typicode.com/posts/1 - інша
+   структура (title, body, userId) - показати, що кожен API має СВОЮ
+   структуру відповіді, яку треба читати з документації конкретного API.

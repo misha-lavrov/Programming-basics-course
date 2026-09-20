@@ -1,0 +1,57 @@
+Реальні, перевірені приклади різних HTTP-методів і статус-кодів (отримано
+командою curl проти публічного тестового API jsonplaceholder.typicode.com,
+яке спеціально створене для навчальних цілей і тестування - можна сміливо
+використовувати на заняттях).
+
+--- GET (запит даних), статус 200 OK ---
+$ curl -i https://jsonplaceholder.typicode.com/users/1
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 509
+
+{ "id": 1, "name": "Leanne Graham", ... }
+
+
+--- GET неіснуючого ресурсу, статус 404 Not Found ---
+$ curl -i https://jsonplaceholder.typicode.com/users/9999
+
+HTTP/1.1 404 Not Found
+Content-Type: application/json; charset=utf-8
+Content-Length: 2
+
+{}
+
+
+--- POST (створення нового ресурсу), статус 201 Created ---
+$ curl -i -X POST https://jsonplaceholder.typicode.com/posts \
+    -H "Content-Type: application/json" \
+    -d '{"title": "Тест", "body": "Текст посту", "userId": 1}'
+
+HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+Content-Length: 102
+Location: https://jsonplaceholder.typicode.com/posts/101
+
+{
+  "title": "Тест",
+  "body": "Текст посту",
+  "userId": 1,
+  "id": 101
+}
+
+Пояснення для заняття:
+- GET - отримати дані, нічого не змінюючи на сервері.
+- POST - створити щось нове; успішний POST типово повертає 201 Created
+  (а не просто 200 OK, як GET) і часто заголовок Location з адресою
+  щойно створеного ресурсу.
+- 404 Not Found - ресурс за такою адресою не існує. Зверніть увагу: тіло
+  відповіді може бути порожнім навіть при коректному запиті - сама
+  наявність даних і код статусу - дві окремі речі.
+- Групи кодів статусу (загальне правило, варто написати на дошці):
+  2xx - успіх, 3xx - перенаправлення, 4xx - помилка з боку клієнта
+  (неправильний запит), 5xx - помилка з боку сервера.
+
+Практика на занятті: показати ще кілька кодів через http.cat (наприклад
+http.cat/404, http.cat/500) - жартівливий, але дієвий спосіб запам'ятати
+основні коди.
