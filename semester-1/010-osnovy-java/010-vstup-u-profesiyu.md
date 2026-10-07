@@ -93,7 +93,7 @@
 - [djinni.co — вакансії Java](https://djinni.co/jobs/?primary_keyword=Java) (UA) — реальний ринок вакансій
 - [dou.ua — вакансії та зарплатні огляди](https://jobs.dou.ua/vacancies/?category=Java) (UA)
 - YouTube-канали українських IT-шкіл (Mate academy, GoIT, Hillel IT School) — вступні лекції та вебінари про професію
-- Повний список — [resursy-ta-kursy.md](../../resursy-ta-kursy.md), розділ «Загальні платформи та мотивація»
+- Повний список — [resursy-ta-kursy.md](../../dlya-studentiv/resursy-ta-kursy.md), розділ «Загальні платформи та мотивація»
 
 ## Джерела коду для цього заняття
 - [`src/010-vstup-u-profesiyu/GuessNumber.java`](src/010-vstup-u-profesiyu/GuessNumber.java) — демо для хука
