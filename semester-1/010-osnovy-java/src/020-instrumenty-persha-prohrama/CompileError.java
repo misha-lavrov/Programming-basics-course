@@ -7,6 +7,7 @@
 
 public class CompileError {
     public static void main(String[] args) {
+        // підказка - постав ; в кінці рядка
         System.out.println("Ця програма поки не компілюється")
         System.out.println("Знайди помилку і виправ її!");
     }
