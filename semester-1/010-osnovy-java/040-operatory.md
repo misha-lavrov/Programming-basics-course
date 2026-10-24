@@ -78,4 +78,5 @@ System.out.println((double) a / b); // 3.4 (приведення до double)
 - [`src/040-operatory/FullCalculator.java`](src/040-operatory/FullCalculator.java) — демонстрація
 - [`src/040-operatory/PredictTheOutput.java`](src/040-operatory/PredictTheOutput.java) — керована практика
 - [`src/040-operatory/LeapYear.java`](src/040-operatory/LeapYear.java) — самостійний челендж
+- [`src/040-operatory/QuickQuiz.java`](src/040-operatory/QuickQuiz.java) — еталонне рішення домашнього завдання «тест на кмітливість» (для викладача; студентам краще не показувати до здачі)
 - Як запускати приклади — [`src/README.md`](src/README.md)
